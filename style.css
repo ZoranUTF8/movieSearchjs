@@ -1,0 +1,142 @@
+@import url("https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&family=Open+Sans&display=swap");
+
+:root {
+  --primaryColor: #8ec5fc;
+  --secondaryColor: #4950a5;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Mochiy Pop P One", sans-serif;
+  background-color: var(--primaryColor);
+  margin: 0;
+  background-repeat: no-repeat;
+}
+
+/* HEADER START */
+header {
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--secondaryColor);
+}
+.search {
+  text-align: center;
+  background-color: transparent;
+  border-radius: 50px;
+  font-family: inherit;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  color: var(--primaryColor);
+}
+.search::placeholder {
+  color: var(--primaryColor);
+}
+.search:focus {
+  background-color: #8ec5fc;
+  color: var(--secondaryColor);
+}
+.search:focus::placeholder {
+  background-color: #8ec5fc;
+  color: var(--secondaryColor);
+}
+.pageTitle {
+  padding: 0.5rem 1rem;
+  color: #fff;
+}
+@media screen and (max-width: 700px) {
+  .pageTitle {
+    display: none;
+  }
+  header {
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+/* HEADER END */
+
+/* MAIN START */
+main {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.movie {
+  width: 22rem;
+  margin: 1rem;
+  background-color: var(--secondaryColor);
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  border-radius: 5px;
+  position: relative;
+}
+.movie img {
+  width: 100%;
+}
+
+.movie-info {
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 1rem 1rem;
+  letter-spacing: 3px;
+}
+.movie-info h3 {
+  margin-top: 0;
+}
+
+.movie-info span {
+  background-color: var(--primaryColor);
+  padding: 0.25rem 0.5rem;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+/* Different rating colors */
+.movie-info span.green {
+  color: lightgreen;
+}
+.movie-info span.orange {
+  color: orange;
+}
+.movie-info span.red {
+  color: red;
+}
+
+.releaseDate {
+  color: #fff;
+  padding: 0.25rem 0.5rem;
+}
+
+.overview {
+  background-color: #fff;
+  padding: 2rem;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0s;
+  /* push it down 101% on start */
+  transform: translateY(101%);
+  transition: transform 0.3s ease-in;
+}
+.movie:hover .overview {
+  transform: translateY(0);
+}
+/* MAIN END */
+
+/* FOOTER START */
+footer {
+  height: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+/* FOOTER END */
